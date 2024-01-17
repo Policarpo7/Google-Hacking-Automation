@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import requests
-from urllib.parse import urlencode
+from urllib.parse import urlencode, unquote
 from bs4 import BeautifulSoup
 
 def show_banner():
@@ -28,7 +28,7 @@ def google_search(query):
             if href.startswith('/url?'):
                 link = href.split('&')[0]
                 link = link.split('=')[1]
-                decoded_link = requests.utils.unquote(link)
+                decoded_link = unquote(link)
                 # Filtra links indesejados
                 if all(x not in decoded_link for x in ['maps.google.com', 'support.google.com', 'accounts.google.com']):
                     links.append(decoded_link)
@@ -38,23 +38,25 @@ def google_search(query):
         return []
 
 # Função para imprimir os resultados de maneira organizada
-def print_results(dork, links):
+def print_results(dork, links, search_term):
     print(f"Resultados para {dork}:")
-    if links:
-        for link in links:
+    found = False
+    for link in links:
+        if search_term.lower().replace("\"", "") in link.lower():
             print(link)
-    else:
-        print("Nenhum link encontrado.")
+            found = True
+    if not found:
+        print("Nenhum resultado exato encontrado para a sua pesquisa.")
     print("-" * 80)
 
 # Solicita entrada do usuário para termo de busca
 search_term = input("Digite o termo que você deseja pesquisar: ").strip()
 
 # Adiciona aspas ao redor do termo de pesquisa para busca exata
-search_term = f"\"{search_term}\""
+search_term_quoted = f"\"{search_term}\""
 
 # Executa a busca para cada operador de pesquisa
 for operator in google_hacking_operators:
-    dork = f"{operator}{search_term}"
+    dork = f"{operator}{search_term_quoted}"
     links = google_search(dork)
-    print_results(dork, links)
+    print_results(dork, links, search_term)
