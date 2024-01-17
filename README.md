@@ -42,6 +42,3 @@ Before you begin, ensure you have Python installed on your system. Additionally,
     2. Enter the search term when prompted.
     3. The script will display links found for each search operator and file type.
 
-## Contributions and Support
-
-Feel free to contribute to the project or open an issue for support. This project is maintained by [Maintainer's Name].
