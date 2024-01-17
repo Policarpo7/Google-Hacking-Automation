@@ -24,7 +24,6 @@ def show_banner():
     print(banner)
 
 show_banner()
-show_banner()
 
 def google_search(query):
   headers = {'User-Agent': 'Mozilla/5.0'}
