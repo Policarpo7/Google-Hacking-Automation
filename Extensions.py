@@ -50,8 +50,11 @@ def print_results(dork, links):
 # Solicita entrada do usuário para termo de busca
 search_term = input("Digite o termo que você deseja pesquisar: ").strip()
 
+# Adiciona aspas ao redor do termo de pesquisa para busca exata
+search_term = f"\"{search_term}\""
+
 # Executa a busca para cada operador de pesquisa
 for operator in google_hacking_operators:
-    dork = f"{operator}\"{search_term}\""
+    dork = f"{operator}{search_term}"
     links = google_search(dork)
     print_results(dork, links)
