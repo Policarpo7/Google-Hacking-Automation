@@ -9,6 +9,7 @@ def show_banner():
   print("  Created by Gustavo Policarpo")
   print("=" * 50)
 
+show_banner()
 
 # Operadores de pesquisa do Google
 google_hacking_operators = ['inurl:', 'intext:', 'intitle:', 'site:', 'cache:']
