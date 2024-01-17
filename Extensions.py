@@ -29,8 +29,8 @@ def google_search(query):
                 link = href.split('&')[0]
                 link = link.split('=')[1]
                 decoded_link = unquote(link)
-                # Filtra links indesejados
-                if all(x not in decoded_link for x in ['maps.google.com', 'support.google.com', 'accounts.google.com']):
+                # Filtra links indesejados e links de nova pesquisa
+                if all(x not in decoded_link for x in ['maps.google.com', 'support.google.com', 'accounts.google.com', '/search?q=']):
                     links.append(decoded_link)
         return links
     else:
@@ -44,7 +44,7 @@ def print_results(dork, links):
         for link in links:
             print(link)
     else:
-        print("Nenhum resultado encontrado.")
+        print("Nenhum resultado relevante encontrado.")
     print("-" * 80)
 
 # Solicita entrada do usuário para termo de busca
