@@ -15,13 +15,6 @@ show_banner()
 # Operadores de pesquisa do Google
 google_hacking_operators = ['inurl:', 'intext:', 'intitle:', 'site:', 'cache:']
 
-# Filetypes comumente associados a informações sensíveis
-sensitive_filetypes = [
-    'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'odt', 'rtf', 'csv',
-    'txt', 'sql', 'xml', 'conf', 'dat', 'ini', 'key', 'bak'
-]
-
-
 # Função para realizar buscas no Google
 def google_search(query):
   headers = {'User-Agent': 'Mozilla/5.0'}
