@@ -39,7 +39,7 @@ def google_search(query):
 
 # Função para imprimir os resultados de maneira organizada
 def print_results(dork, links):
-    print(f"Resultados para {dork}:")
+    print(f"\nResultados para {dork}:")
     if links:
         for link in links:
             print(link)
