@@ -9,6 +9,7 @@ def show_banner():
   print("  Created by Gustavo Policarpo")
   print("=" * 50)
 
+show_banner()
 
 def google_search(query):
   headers = {'User-Agent': 'Mozilla/5.0'}
