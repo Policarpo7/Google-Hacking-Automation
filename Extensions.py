@@ -38,15 +38,13 @@ def google_search(query):
         return []
 
 # Função para imprimir os resultados de maneira organizada
-def print_results(dork, links, search_term):
+def print_results(dork, links):
     print(f"Resultados para {dork}:")
-    found = False
-    for link in links:
-        if search_term.lower().replace("\"", "") in link.lower():
+    if links:
+        for link in links:
             print(link)
-            found = True
-    if not found:
-        print("Nenhum resultado exato encontrado para a sua pesquisa.")
+    else:
+        print("Nenhum resultado encontrado.")
     print("-" * 80)
 
 # Solicita entrada do usuário para termo de busca
@@ -59,4 +57,4 @@ search_term_quoted = f"\"{search_term}\""
 for operator in google_hacking_operators:
     dork = f"{operator}{search_term_quoted}"
     links = google_search(dork)
-    print_results(dork, links, search_term)
+    print_results(dork, links)
