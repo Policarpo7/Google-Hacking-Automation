@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import requests
 from urllib.parse import urlencode
 from bs4 import BeautifulSoup
