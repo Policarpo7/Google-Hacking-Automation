@@ -63,10 +63,3 @@ for operator in google_hacking_operators:
   dork = f"{operator}\"{search_term}\""
   links = google_search(dork)
   print_results(dork, links)
-
-# Agora, executa a busca para cada filetype sensível
-print("Pesquisando por filetypes sensíveis...")
-for filetype in sensitive_filetypes:
-  dork = f"filetype:{filetype} \"{search_term}\""
-  links = google_search(dork)
-  print_results(dork, links)
