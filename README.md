@@ -42,3 +42,7 @@ Before you begin, ensure you have Python installed on your system. Additionally,
     2. Enter the search term when prompted.
     3. The script will display links found for each search operator and file type.
 
+###Demonstração
+
+[![Demonstração da Ferramenta](http://img.youtube.com/vi/1GD5ZTuXbJc/0.jpg)](http://www.youtube.com/watch?v=1GD5ZTuXbJc)
+
